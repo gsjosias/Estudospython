@@ -30,11 +30,11 @@ class tela(App):
 
         layout.add_widget(ed)
         layout.add_widget(bt)
-        
+
         return  layout
 
-    janela = App()
+    tela = App()
     from kivy.core.window import Window
     Window.size = 600,600
-    janela.build = build
-    janela.run()
+    tela.build = build
+    tela.run()
