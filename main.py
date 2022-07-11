@@ -3,38 +3,38 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 
-def click():
-    print(ed.text)
+class tela(App):
 
-def build():
-    layout = FloatLayout()
+    def click(self, ed):
+        print(ed.text)
 
-    global ed
-    ed = TextInput(text="eXcript")
+    def build(self):
+        layout = FloatLayout()
 
-    ed.size_hint = None, None
-    ed.height = 300
-    ed.width = 400
-    ed.x = 100
-    ed.y = 250
+        ed = TextInput(text="eXcript")
 
-    bt = Button(text="Clique aqui")
-    bt.size_hint = None, None
-    bt.width = 200
-    bt.height = 50
-    bt.x = 200
-    bt.y = 100
+        ed.size_hint = None, None
+        ed.height = 300
+        ed.width = 400
+        ed.x = 100
+        ed.y = 250
 
-    bt.on_press = click
+        bt = Button(text="Clique aqui")
+        bt.size_hint = None, None
+        bt.width = 200
+        bt.height = 50
+        bt.x = 200
+        bt.y = 100
 
-    layout.add_widget(ed)
-    layout.add_widget(bt)
+        bt.on_press = tela.click
 
+        layout.add_widget(ed)
+        layout.add_widget(bt)
+        
+        return  layout
 
-    return  layout
-
-janela = App()
-from kivy.core.window import Window
-Window.size = 600,600
-janela.build = build
-janela.run()
+    janela = App()
+    from kivy.core.window import Window
+    Window.size = 600,600
+    janela.build = build
+    janela.run()
